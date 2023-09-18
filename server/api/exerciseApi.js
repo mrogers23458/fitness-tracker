@@ -28,6 +28,7 @@ exerciseApi.post("/", async (req, res) => {
         reps,
         user: userId,
       });
+      // reponse code
       res.status(201).json(newExercise);
     } else {
       res.status(400).json({ message: "All information is required" });
