@@ -7,6 +7,6 @@ const workoutApi = require("./workoutApi.js");
 
 app.use("/exercise", exerciseApi);
 app.use("/user", userApi);
-app.use("/", workoutApi);
+app.use("/workout", workoutApi);
 
 module.exports = app;
