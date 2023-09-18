@@ -17,8 +17,10 @@ exerciseApi.get("/:id", (req, res) => {
 // Create Route
 exerciseApi.post("/", async (req, res) => {
   try {
+    // abstract properties from req.body
     const { name, sets, reps, userId } = req.body;
 
+    // if all necessary information is there create the exercise
     if ((name, sets, reps, userId)) {
       const newExercise = await Exercise.create({
         name,
@@ -28,9 +30,7 @@ exerciseApi.post("/", async (req, res) => {
       });
       res.status(201).json(newExercise);
     } else {
-      res
-        .status(400)
-        .json({ message: "Both username and password are required" });
+      res.status(400).json({ message: "All information is required" });
     }
   } catch (error) {
     console.error(error);
