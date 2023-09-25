@@ -7,6 +7,7 @@ const exerciseSchema = new Schema({
   reps: Number,
   user: {
     type: mongoose.Schema.ObjectId,
+    ref: "User",
   },
 });
 
